@@ -5,7 +5,7 @@ let s="scissors";
 let choice;
 let humanScore=0;
 let computerScore=0;
-let round =0;
+let round=0;
 function getComputerChoice() {
     const random=Math.floor(Math.random()*3);
     if(random===0) {
@@ -75,17 +75,18 @@ function updateUI(humanChoice,computerChoice,result) {
     const finalResultDiv=document.querySelector("#final-result");
     resultDiv.textContent=`Round ${round}: You choose ${humanChoice}, Computer choose: ${computerChoice}.${result}`;
     scoreDiv.textContent=`Current Score: You: ${humanScore}, Computer: ${computerScore}`;
-    if(round===5) {
+    if(humanScore===5 || computerScore===5) {
         let finalMessage;
-    if(humanScore>computerScore) {
+    if(humanScore===5) {
             finalMessage="Final Result: You Won the Game!!";
-        } else if(humanScore<computerScore) {
+        } else if(humanScore!==5) {
             finalMessage="Final Result: Computer Won the Game!!";
         } else {
             finalMessage="Final Result: It's a TIE !!";
         }
     finalResultDiv.textContent=finalMessage;
     }
+    
 }
 
 
@@ -93,7 +94,7 @@ function updateUI(humanChoice,computerChoice,result) {
 const buttons= document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener("click",() => {
-        if(round<=5) {
+        if(humanScore<5 && computerScore<5) {
             round++;
             const humanChoice=button.textContent.toLowerCase();
             const computerChoice=getComputerChoice();
