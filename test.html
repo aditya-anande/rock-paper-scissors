@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Rock</button>
+    <button id="btn">Paper</button>
+    <button id="btn">Scissors</button>
+    <script>
+      
+        const buttons= document.querySelectorAll("button");
+        buttons.forEach((button) => {
+            button.addEventListener("click",() => {
+                if(rounds<=5) {
+                    rounds++;
+                    const humanChoice=button.textContent.toLowerCase();
+                    const ComputerChoice=getComputerChoice();
+                    const result=playRound(humanChoice,ComputerChoice);
+                    updateUI(humanChoice,ComputerChoice,result);
+                }
+        });
+    });
+    </script>
+</body>
+</html>
