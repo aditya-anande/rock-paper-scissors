@@ -46,3 +46,15 @@ h1 {
 .button-group {
     margin-bottom: 1em;
 }
+
+.result-text {
+    background-color: aqua;
+    border: 5px solid #000;
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.result-text div{
+    margin-bottom: 10px;
+}

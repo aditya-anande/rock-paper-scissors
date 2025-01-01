@@ -84,7 +84,7 @@ function updateUI(humanChoice,computerChoice,result) {
         } else {
             finalMessage="Final Result: It's a TIE !!";
         }
-    finalResultDiv.textContent=finalMessage;
+    finalResultDiv.innerHTML="!!GAME OVER!!"+ `<br>`+ `${finalMessage}`;
     }
     
 }
