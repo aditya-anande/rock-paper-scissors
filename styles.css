@@ -48,7 +48,7 @@ h1 {
 }
 
 .result-text {
-    background-color: aqua;
+    background-color: rgb(247, 247, 247);
     border: 5px solid #000;
     width: 50%;
     padding: 10px;
